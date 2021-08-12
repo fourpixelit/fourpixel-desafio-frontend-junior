@@ -4,7 +4,7 @@ Primeiramente, obrigado pelo seu interesse em fazer parte da nossa equipe de dev
 # Avisos antes de começar
 - Para iniciar o teste, crie uma branch a partir da main nesse padrão de nomenclatura: dd-mm-yy/nome-sobrenome (por exemplo, 30-04-20/meu-nome)
 
-- Quando finalizar o teste, cria uma PR da sua branch para a master e avise o(a) recrutador(a) que o teste está finalizado.
+- Quando finalizar o teste, cria um PR da sua branch para a master e avise o(a) recrutador(a) que o teste está finalizado.
 
 - Você poderá consultar o Google, Stackoverflow ou algum projeto particular na sua máquina.
 
@@ -19,7 +19,7 @@ Primeiramente, obrigado pelo seu interesse em fazer parte da nossa equipe de dev
 
 # Leia com atenção! ⚠️
 
-- O desafio consiste de uma aplicação que consumirá as apis publicas do Github. <br /> Sua aplicação deve solicitar o nome de um usuário do Github e as informações publicas desse usuário, como nome, foto, bio etc.. <br />
+- O desafio consiste de uma aplicação que consumirá as apis públicas do Github. <br /> Sua aplicação deve solicitar o nome de um usuário do Github e as informações públicas desse usuário, como nome, foto, bio etc.. <br />
 Deve também listar 3 repositórios mais populares desse usuário, dando a opção de visualizar todos os repositórios. <br />
 Criar uma listagem com todos repositórios dando a opção de visualizar mais detalhes sobre esse repositório ao clicar sobre ele. <br />
 Criar uma funcionalidade de favoritar repositórios, salvando no proprio navegador.
@@ -32,7 +32,7 @@ Criar uma funcionalidade de favoritar repositórios, salvando no proprio navegad
 
 # API
 
-Para o seu desafio ser mais interativo, você utilizará o Github API. Portanto, é necessário ler atentamente os endpoints que ele oference.
+Para o seu desafio ser mais interativo, você utilizará o Github API. Portanto, é necessário ler atentamente os endpoints que ele oferece.
 
 Link da documentação do Github API: https://docs.github.com/pt/rest
 
