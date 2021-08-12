@@ -20,8 +20,8 @@ Primeiramente, obrigado pelo seu interesse em fazer parte da nossa equipe de dev
 # Leia com atenção! ⚠️
 
 - O desafio consiste de uma aplicação que consumirá as apis publicas do Github. <br /> Sua aplicação deve solicitar o nome de um usuário do Github e as informações publicas desse usuário, como nome, foto, bio etc.. <br />
-Deve também listar 3 repositórios mais populares desse usuário, dando a opção de visualizar todos os repositórios.
-Criar uma listagem com todos repositórios dando a opção de visualizar mais detalhes sobre esse repositório ao clicar sobre ele.
+Deve também listar 3 repositórios mais populares desse usuário, dando a opção de visualizar todos os repositórios. <br />
+Criar uma listagem com todos repositórios dando a opção de visualizar mais detalhes sobre esse repositório ao clicar sobre ele. <br />
 Criar uma funcionalidade de favoritar repositórios, salvando no proprio navegador.
 
 - Certifique-se de revisar seu código, a modo que fique o mais organizado possível para a avaliação e entendimento dos avaliadores.
