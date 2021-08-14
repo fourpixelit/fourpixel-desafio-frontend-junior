@@ -1,0 +1,26 @@
+.user {
+    width: 60%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.user > img {
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 10px solid #504F50;
+}
+
+.user h3, .user h1{
+    margin: 2px 0 5px 0;
+}
+
+.user p {
+    padding: 0 10px;
+    text-align: center;
+}

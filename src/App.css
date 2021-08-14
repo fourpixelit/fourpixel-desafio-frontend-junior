@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 
 .App {
   background-color: #282c34;
@@ -7,17 +10,4 @@
   align-items: center;
   justify-content: center;
   color: white;
-}
-
-.App p {
-  text-align: center;
-  line-height: 24px;
-}
-
-.App h1 {
-  font-size: calc(10px + 2vmin);
-}
-
-.App ul li {
-  margin-bottom: 10px;
 }
