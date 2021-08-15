@@ -6,6 +6,7 @@ async function getDataGithubUserRepos(user) {
 
     if ((dataRepos.ok) && (dataRepos.status === 200)) {
         const dataReposJson = dataRepos.json()
+        console.log('consulta repo')
         return dataReposJson
     }
     console.log(`erro repos`)

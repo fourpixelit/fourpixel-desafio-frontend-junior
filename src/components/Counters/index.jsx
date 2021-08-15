@@ -4,7 +4,7 @@ import './style.css'
 function Counters(props) {
 
     return (
-        <div className="repos">
+        <div className="infos">
             <div>
                 <p>Repositórios</p>
                 <span>{props.repos}</span>

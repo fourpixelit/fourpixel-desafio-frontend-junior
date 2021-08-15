@@ -6,6 +6,7 @@ async function getDataGithubUser(user) {
 
     if ((dataUser.ok) && (dataUser.status === 200)) {
         const dataUserJson = dataUser.json()
+        console.log('consulta user')
         return dataUserJson
     }
     console.log(`erro`)

@@ -49,6 +49,8 @@
     background-color: inherit;
     border: none;
     cursor: pointer;
+    color: #fff;
+    font-size: 20px;
 }
 
 .search button:hover {
