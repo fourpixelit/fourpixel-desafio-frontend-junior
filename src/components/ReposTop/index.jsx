@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import './style.css'
 
@@ -8,6 +9,7 @@ import ReposAll from '../ReposAll';
 function ReposTopThree(props) {
 
     const [showAllRepositories, setShowAllRepositories] = useState(false)
+    const history = useHistory()
 
     const repositories = props.repos
     const ordernedRepositories = repositories.sort((a, b) => b.watchers - a.watchers)
@@ -16,8 +18,9 @@ function ReposTopThree(props) {
     console.log('ordenados:', ordernedRepositories)
     console.log('filtrados:', filteredRepositories)
 
-    function handleRepositories() {
+    function handleRepositories(route) {
         console.log(`clicado`)
+        history.push(route)
         setShowAllRepositories(true)
     }
 
@@ -35,7 +38,7 @@ function ReposTopThree(props) {
                 })
             }
             <div className="more-repos">
-                <a onClick={handleRepositories}>
+                <a onClick={() => handleRepositories('/repositorios')}>
                     <CgMore className="more-info"/>
                 </a>
             </div>

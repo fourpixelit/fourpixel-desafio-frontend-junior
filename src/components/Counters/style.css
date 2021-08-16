@@ -6,6 +6,16 @@
     text-align: center;
 }
 
+.infos div {
+    width: 33%;
+}
+
+.infos div:hover {
+    background-color: #aaa;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 .infos span {
     text-decoration: none;
     color: #504F50;
@@ -13,6 +23,6 @@
 
 .infos p {
     font-weight: 500;
-    margin-bottom: 2px;
+    margin: 4px;
     padding: 0 5px;
 }

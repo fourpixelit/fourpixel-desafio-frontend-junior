@@ -2,7 +2,7 @@ import baseURL from './baseGit'
 
 async function getDataGithubUserRepos(user) {
     const url = baseURL()
-    const dataRepos = await fetch(`${url}${user}/repos`)
+    const dataRepos = await fetch(`${url}${user}/repos?per_page=100`)
 
     if ((dataRepos.ok) && (dataRepos.status === 200)) {
         const dataReposJson = dataRepos.json()
@@ -12,7 +12,7 @@ async function getDataGithubUserRepos(user) {
     console.log(`erro repos`)
     return {
         error: true,
-        message: 'Usuário não encontrado.'
+        message: 'Repositório não encontrado.'
     }
 }
 

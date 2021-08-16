@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import { CgSearch } from "react-icons/cg";
+
 import './style.css'
 import getDataGithubUser from '../../Git';
 import getDataGithubUserRepos from '../../GitRepos';
 
-import { CgSearch } from "react-icons/cg";
-
+import { context } from '../../context';
 import User from '../User';
 import Counters from '../Counters';
 import ReposTopThree from '../ReposTop';
 
 function SearchedUser() {
 
-    const [dataUser, setDataUser] = useState({})
-    const [dataRepos, setDataRepos] = useState({})
+    const ctx = useContext(context)
+
+    // const [dataUser, setDataUser] = useState({})
+    // const [dataRepos, setDataRepos] = useState([])
     const [searchedUser, setSearchedUser] = useState('')
     const [isSearched, setIsSearched] = useState(false)
     const [isFoundUser, setFoundUser] = useState(false)
@@ -27,8 +31,8 @@ function SearchedUser() {
             const responseRepos = await getDataGithubUserRepos(searchedUser)
             console.log('respositorios:', responseRepos)
 
-            setDataUser(response)
-            setDataRepos(responseRepos)
+            ctx.setDataUser(response)
+            ctx.setDataRepos(responseRepos)
 
             if (response.error) {
                 return
@@ -55,16 +59,17 @@ function SearchedUser() {
                 </div>
             </div>
 
-            {isSearched && isFoundUser &&
+            { ctx.dataUser.name &&//isSearched && isFoundUser &&
+           /// TRATAR ESSA PARTE PARA QUE AO VOLTAR ELA ESTEJA EXIBIDA 
                 <div className="result">
-                    <User name={dataUser?.name} login={dataUser?.login} avatar={dataUser?.avatar_url} bio={dataUser?.bio} />
-                    <Counters repos={dataUser?.public_repos} followers={dataUser?.followers} following={dataUser?.following} />
-                    <ReposTopThree repos={dataRepos} />
+                    <User name={ctx.dataUser?.name} login={ctx.dataUser?.login} avatar={ctx.dataUser?.avatar_url} bio={ctx.dataUser?.bio} />
+                    <Counters repos={ctx.dataUser?.public_repos} followers={ctx.dataUser?.followers} following={ctx.dataUser?.following} />
+                    <ReposTopThree repos={ctx.dataRepos} />
                 </div>
             }
 
             {isFoundUser === false &&
-                <span>{dataUser.message}</span>
+                <span>{ctx.dataUser.message}</span>
             }
         </div>
     );

@@ -1,21 +1,25 @@
+import React, { useContext } from 'react';
+
 import './style.css'
 
 import { CgCheck } from "react-icons/cg";
 
-function ReposAll(props) {
+import { context } from '../../context'
 
-    const repositories = props.repos
-    
+function ReposAll() {
+
+    const ctx = useContext(context)
+
     return (
         <div className="repositories-all">
-            <h4>Todos Repositórios</h4>
+            <h1>Repositórios de {(ctx.dataUser.name)?.split(' ')[0]}</h1>
             {
-                repositories.map(repo => {
+                ctx.dataRepos.map(repo => {
                     return (
-                        <a href="/" key={repo.id}>
-                            <CgCheck className="icon" />
-                            <span>{repo.name}</span>
-                        </a>
+                        <div key={repo.id} className="repositorie">
+                            <h3>{repo.name}</h3>
+                            <p>{repo?.description}</p>
+                        </div>
                     )
                 })
             }
