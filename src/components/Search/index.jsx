@@ -15,15 +15,11 @@ function SearchedUser() {
 
     const ctx = useContext(context)
 
-    // const [dataUser, setDataUser] = useState({})
-    // const [dataRepos, setDataRepos] = useState([])
     const [searchedUser, setSearchedUser] = useState('')
-    const [isSearched, setIsSearched] = useState(false)
     const [isFoundUser, setFoundUser] = useState(false)
 
     async function getData() {
         setFoundUser(false)
-        setIsSearched(false)
 
         if (searchedUser) {
             const response = await getDataGithubUser(searchedUser)
@@ -38,7 +34,6 @@ function SearchedUser() {
                 return
             }
             setFoundUser(true)
-            setIsSearched(true)
         }
     }
 
@@ -59,8 +54,7 @@ function SearchedUser() {
                 </div>
             </div>
 
-            { ctx.dataUser.name &&//isSearched && isFoundUser &&
-           /// TRATAR ESSA PARTE PARA QUE AO VOLTAR ELA ESTEJA EXIBIDA 
+            { ctx.dataUser.name &&
                 <div className="result">
                     <User name={ctx.dataUser?.name} login={ctx.dataUser?.login} avatar={ctx.dataUser?.avatar_url} bio={ctx.dataUser?.bio} />
                     <Counters repos={ctx.dataUser?.public_repos} followers={ctx.dataUser?.followers} following={ctx.dataUser?.following} />

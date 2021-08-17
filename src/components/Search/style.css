@@ -3,7 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 100%;
+    max-width: 1000px;
+    min-width: 500px;
 }
 
 .result {

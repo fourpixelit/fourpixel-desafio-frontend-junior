@@ -10,13 +10,11 @@
     margin: 5px auto;
 }
 
-.repositories a{
+.repositories div{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     margin: 0 auto;
-    color: inherit;
     font-weight: 500;
 }
 

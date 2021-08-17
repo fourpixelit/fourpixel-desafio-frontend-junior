@@ -1,49 +1,56 @@
 .repositories-all {
     width: 60%;
-    margin-top: 10px;
     text-align: center;
     border-radius: 10px;
-    background-color: #504F50;
+    background-color: #fff;
+    margin: 10px 0;
+    color: #333;
+    max-width: 1000px;
+    min-width: 300px;
 } 
 
-.repositories-all h3{
-    margin: 5px auto;
+.container-repository {
+    height: 70vh;
+    max-height: 600px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
 }
 
-.repositories-all a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    margin: 0 auto;
-    color: inherit;
-    font-weight: 500;
+.hidden {
+    display: none;
 }
 
-.repositorie {
-    border: 1px solid #fff;
+.repository {
+    background-color:  #ccc;
+    height: 80px;
     border-radius: 10px;
     cursor: pointer;
-    margin: 0 5px 5px 5px;
+    margin: 0 5px 10px 5px;
 }
 
-.repositorie:hover {
+.repository h3{
+    margin: 5px 0;
+}
+
+.repository p{
+    margin: 5px 0;
+}
+
+.repository:hover {
+    background-color: #eee;
+}
+
+.hearth:hover {
+    font-size: 22px;
+}
+
+::-webkit-scrollbar-track {
     background-color: #fff;
-    color: #777;
 }
-
-.icon {
-    font-size: 20px;
-    margin: 0;
+::-webkit-scrollbar {
+    width: 6px;
+    background: #fff;
 }
-
-.more-repos {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.more-info {
-    font-size: 30px;
+::-webkit-scrollbar-thumb {
+    background: #ccc;
 }

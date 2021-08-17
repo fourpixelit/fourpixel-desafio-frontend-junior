@@ -1,0 +1,40 @@
+.container-repository-info {
+    background-color: #ccc;
+    color: #000;
+    text-align: center;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 1000px;
+    min-width: 300px;
+}
+
+.container-repository-info a {
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.repository-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.repository-info div{
+    width: 200px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 0 5px 10px 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    right: 10px;
+}
