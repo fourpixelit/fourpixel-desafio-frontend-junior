@@ -25,11 +25,11 @@ function RepoInfo(props) {
                 </div>
                 <div>
                     <h4>Repositório</h4>
-                    <a href={props.repo?.html_url} target="_blank"><GoRepo /></a>
+                    <a href={props.repo?.html_url} target="_parent" rel="noopener"><GoRepo /></a>
                 </div>
                 <div>
                     <h4>Github</h4>
-                    <a href={props.repo.owner?.html_url} target="_blank"><GoMarkGithub /></a>
+                    <a href={props.repo.owner?.html_url} target="_parent" rel="noopener"><GoMarkGithub /></a>
                 </div>
             </div>
             <div className="repository-info">
