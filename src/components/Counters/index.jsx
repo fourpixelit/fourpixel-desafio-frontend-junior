@@ -1,6 +1,7 @@
+import './style.css'
+
 import React from 'react'
 import { useHistory } from 'react-router-dom';
-import './style.css'
 
 function Counters(props) {
 
@@ -23,7 +24,7 @@ function Counters(props) {
                 <span>{props.repos}</span>
             </div>
 
-            <div onClick={() => handleClickFollowers('/sequidores')}>
+            <div onClick={() => handleClickFollowers('/seguidores')}>
                 <p>Seguidores</p>
                 <span>{props.followers}</span>
             </div>

@@ -1,6 +1,6 @@
-import { useHistory } from 'react-router-dom';
-
 import './style.css'
+
+import { useHistory } from 'react-router-dom';
 
 import { CgMore, CgCheck } from "react-icons/cg";
 
@@ -31,7 +31,7 @@ function ReposTopThree(props) {
             }
             <div className="more-repos">
                 <span onClick={() => handleRepositories('/repositorios')}>
-                    <CgMore className="more-info"/>
+                    <CgMore className="more-info" />
                 </span>
             </div>
         </div>

@@ -1,9 +1,10 @@
+import './style.css'
+
 import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import './style.css'
-
 import { context } from '../../context'
+
 import { GoX } from "react-icons/go";
 import { CgHeart } from "react-icons/cg";
 
@@ -27,7 +28,7 @@ function ReposAll() {
         }
 
         loadLocalStorage()
-    }, [])
+    }, [ctx.dataUser.login])
 
     function handleClickRepo(repo) {
         const repoInfo = document.querySelector('.container-repository-info')
@@ -47,34 +48,35 @@ function ReposAll() {
         if (e.target.tagName === 'svg') {
             const target = e.target
             target.classList.toggle('liked')
-            // const isLiked = target.getAttribute('class').includes('liked') ? true : false
-            updateLikedRepos(repo)
+            handleLikedRepos(repo)
         }
     }
 
-    function updateLikedRepos(repo) {
+    function handleLikedRepos(repo) {
         const likedReposUserSaved = localStorage.getItem(ctx.dataUser.login)
 
-        let novosArray = []
-
         if (likedReposUserSaved) {
-            novosArray = JSON.parse(likedReposUserSaved)
-            const hasLikedRepo = novosArray.includes(repo.id)
+            const reposLikedInLocalStorage = JSON.parse(likedReposUserSaved)
 
-            console.log(`oooooooooooooooooo`, hasLikedRepo)
-
-            if (hasLikedRepo) {
-                novosArray = novosArray.filter((r) => r.id !== repo.id)
-            }
-
-        } else {
-            novosArray = [...novosArray, repo.id]
+            const toggledLike = verifyToggleLike(reposLikedInLocalStorage, repo)
+            saveLikedRepos(toggledLike)
+            return
         }
+        saveLikedRepos([repo.id])
+    }
 
-        console.log('savedUserLocalStorage', novosArray)
+    function verifyToggleLike(repositories, repo) {
+        const hasLikedRepo = repositories.includes(repo.id)
 
-        setLikedRepos(novosArray)
-        localStorage.setItem(ctx.dataUser.login, JSON.stringify(novosArray))
+        if (hasLikedRepo) {
+            return repositories.filter((rep) => rep !== repo.id)
+        }
+        return [...repositories, repo.id]
+    }
+
+    function saveLikedRepos(repos) {
+        setLikedRepos(repos)
+        localStorage.setItem(ctx.dataUser.login, JSON.stringify(repos))
     }
 
     return (

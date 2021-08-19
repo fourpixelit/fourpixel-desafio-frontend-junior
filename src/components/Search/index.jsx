@@ -1,12 +1,12 @@
+import './style.css'
+
 import React, { useState, useContext } from 'react';
 
 import { CgSearch } from "react-icons/cg";
 
-import './style.css'
-import getDataGithubUser from '../../Git';
-import getDataGithubUserRepos from '../../GitRepos';
-
 import { context } from '../../context';
+import getDataGithubUser from '../../services/Git';
+import getDataGithubUserRepos from '../../services/GitRepos';
 import User from '../User';
 import Counters from '../Counters';
 import ReposTopThree from '../ReposTop';
@@ -19,20 +19,20 @@ function SearchedUser() {
     const [isFoundUser, setFoundUser] = useState(false)
 
     async function getData() {
-        setFoundUser(false)
 
         if (searchedUser) {
             const response = await getDataGithubUser(searchedUser)
 
             const responseRepos = await getDataGithubUserRepos(searchedUser)
-            console.log('respositorios:', responseRepos)
 
             ctx.setDataUser(response)
-            ctx.setDataRepos(responseRepos)
 
             if (response.error) {
+                setFoundUser(false)
                 return
             }
+
+            ctx.setDataRepos(responseRepos)
             setFoundUser(true)
         }
     }
@@ -54,7 +54,7 @@ function SearchedUser() {
                 </div>
             </div>
 
-            { ctx.dataUser.name &&
+            {ctx.dataUser.name &&
                 <div className="result">
                     <User name={ctx.dataUser?.name} login={ctx.dataUser?.login} avatar={ctx.dataUser?.avatar_url} bio={ctx.dataUser?.bio} />
                     <Counters repos={ctx.dataUser?.public_repos} followers={ctx.dataUser?.followers} following={ctx.dataUser?.following} />

@@ -3,8 +3,6 @@ import './style.css'
 import { GoStar, GoEye, GoX, GoRepoForked, GoRepo, GoMarkGithub } from "react-icons/go";
 
 function RepoInfo(props) {
-    console.log('vindo do repo', props, Date(props.repo.created_at))
-
     function handleCloseInfoRepo() {
         const repoInfo = document.querySelector('.container-repository-info')
         const reposAll = document.querySelector('.repositories-all')
@@ -25,11 +23,11 @@ function RepoInfo(props) {
                 </div>
                 <div>
                     <h4>Repositório</h4>
-                    <a href={props.repo?.html_url} target="_parent" rel="noopener"><GoRepo /></a>
+                    <a href={props.repo?.html_url} ><GoRepo /></a>
                 </div>
                 <div>
                     <h4>Github</h4>
-                    <a href={props.repo.owner?.html_url} target="_parent" rel="noopener"><GoMarkGithub /></a>
+                    <a href={props.repo.owner?.html_url} ><GoMarkGithub /></a>
                 </div>
             </div>
             <div className="repository-info">
