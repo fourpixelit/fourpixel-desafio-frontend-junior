@@ -12,12 +12,14 @@ body,
   height: 100%;
 }
 
+/* util */
 .fill-width {
   width: 100%;
 }
 .fill-height {
   height: 100%;
 }
+
 /* containers */
 .container {
   width: calc(100% - 100px);
