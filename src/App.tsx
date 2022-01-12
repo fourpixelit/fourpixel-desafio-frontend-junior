@@ -3,6 +3,7 @@ import "./App.css";
 import { Api } from "./lib/api";
 import { Header } from "./components/header/Header";
 import { IUser } from "./interfaces/IUser";
+import { Main } from "./components/main/Main";
 
 class App extends React.Component<
   {},
@@ -39,6 +40,7 @@ class App extends React.Component<
           searchHandleChange={this.searchHandleChange}
           searchHandleKeyPress={this.searchHandleKeyPress}
         />
+        <Main user={this.state.user} />
       </div>
     );
   }

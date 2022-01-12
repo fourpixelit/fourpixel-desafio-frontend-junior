@@ -1,0 +1,39 @@
+nav {
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  border-bottom: 1px solid lightgrey;
+}
+
+nav > ul {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: center;
+}
+
+nav > ul > li {
+  height: 46px;
+  padding: 0 10px;
+  list-style-type: none;
+  border-bottom: 2px solid white;
+}
+
+nav > ul > li.active {
+  border-bottom-color: orange;
+}
+
+nav > ul > li:hover:not(.active) {
+  border-bottom-color: lightgrey;
+}
+
+nav > ul > li > button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
