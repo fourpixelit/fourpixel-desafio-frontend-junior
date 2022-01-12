@@ -29,6 +29,9 @@ body,
 /* linhas e colunas */
 .row {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .row > .col,
 .row > .col-4 {
@@ -38,10 +41,10 @@ body,
   width: 25%;
 }
 .row > .col-2 {
-  width: 25%;
+  width: 50%;
 }
 .row > .col-3 {
-  width: 25%;
+  width: 75%;
 }
 
 /* flex utils */
