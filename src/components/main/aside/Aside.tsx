@@ -29,7 +29,11 @@ export class Aside extends React.Component<IAsideProps, IAsideState> {
         </div>
         <div className="row">
           <div className="col">
-            <a href={this.props.user?.html_url}>
+            <a
+              href={this.props.user?.html_url}
+              target="_blank"
+              rel="noreferrer"
+            >
               <button id="btn-open-in-github">Abrir no GitHub</button>
             </a>
           </div>
