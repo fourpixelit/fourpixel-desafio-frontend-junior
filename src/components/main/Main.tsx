@@ -1,5 +1,6 @@
 import React from "react";
 import { IUser } from "../../interfaces/IUser";
+import { Aside } from "./aside/Aside";
 import "./Main.css";
 import { TabsHeader } from "./tabs-header/TabsHeader";
 
@@ -37,6 +38,14 @@ export class Main extends React.Component<IMainProps, IMainState> {
           activeTab={this.state.activeTab}
           handleChangeTab={this.activeTabHandleChange}
         />
+        <div className="container">
+          <div className="row">
+            <div className="col-1">
+              <Aside user={this.props.user} />
+            </div>
+            <div className="col-3" id="tab-content"></div>
+          </div>
+        </div>
       </main>
     );
   }
