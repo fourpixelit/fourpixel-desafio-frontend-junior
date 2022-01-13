@@ -1,8 +1,7 @@
 nav {
   width: 100%;
   height: 50px;
-  position: sticky;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav > ul {
@@ -22,11 +21,11 @@ nav > ul > li {
 }
 
 nav > ul > li.active {
-  border-bottom-color: orange;
+  border-bottom-color: var(--highlight-active);
 }
 
 nav > ul > li:hover:not(.active) {
-  border-bottom-color: lightgrey;
+  border-bottom-color: var(--border-color);
 }
 
 nav > ul > li > button {
@@ -36,4 +35,8 @@ nav > ul > li > button {
   border: none;
   background-color: inherit;
   cursor: pointer;
+}
+
+nav > ul > li > button:hover {
+  background-color: inherit;
 }

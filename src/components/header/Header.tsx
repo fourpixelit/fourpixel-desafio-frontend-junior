@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField } from "../TextField";
+import { TextField } from "../text-field/TextField";
 import "./Header.css";
 
 export class Header extends React.Component<
@@ -13,12 +13,16 @@ export class Header extends React.Component<
   render() {
     return (
       <header>
-        <TextField
-          placeholder="Buscar"
-          value={this.props.search}
-          handleChange={this.props.searchHandleChange}
-          handleKeyPress={this.props.searchHandleKeyPress}
-        />
+        <div className="row align-h-end">
+          <div className="col-1">
+            <TextField
+              placeholder="Username"
+              value={this.props.search}
+              handleChange={this.props.searchHandleChange}
+              handleKeyPress={this.props.searchHandleKeyPress}
+            />
+          </div>
+        </div>
       </header>
     );
   }

@@ -1,16 +1,19 @@
 import React from "react";
+import { IRepository } from "../../interfaces/IRepository";
 import { IUser } from "../../interfaces/IUser";
 import { Aside } from "./aside/Aside";
 import "./Main.css";
+import { TabsContent } from "./tabs-content/TabsContent";
 import { TabsHeader } from "./tabs-header/TabsHeader";
 
 const TABS = [
-  { tabName: "overiew", title: "Visão geral" },
+  { tabName: "overview", title: "Visão geral" },
   { tabName: "repositories", title: "Repositórios" },
 ];
 
 interface IMainProps {
   user: IUser | undefined;
+  repositories: IRepository[] | undefined;
 }
 
 interface IMainState {
@@ -22,7 +25,7 @@ export class Main extends React.Component<IMainProps, IMainState> {
     super(props);
 
     this.state = {
-      activeTab: "overiew",
+      activeTab: "overview",
     };
   }
 
@@ -43,7 +46,13 @@ export class Main extends React.Component<IMainProps, IMainState> {
             <div className="col-1">
               <Aside user={this.props.user} />
             </div>
-            <div className="col-3" id="tab-content"></div>
+            <div className="col-3">
+              <TabsContent
+                user={this.props.user}
+                activeTab={this.state.activeTab}
+                repositories={this.props.repositories}
+              />
+            </div>
           </div>
         </div>
       </main>

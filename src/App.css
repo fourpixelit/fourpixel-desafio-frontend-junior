@@ -1,8 +1,24 @@
 * {
+  /* reset */
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+
+  /* vars */
+  --light-bg-color: rgb(245, 245, 245);
+  --light-bg-color-hover: rgb(225, 225, 225);
   --header-bg-color: rgb(36, 41, 47);
+  --border-color: rgb(201, 201, 201);
+  --text-color: rgb(44, 44, 44);
+  --highlight-active: rgb(255, 165, 0);
+  --highlight-link: rgb(71, 71, 231);
+  --gray: rgb(65, 65, 65);
+
+  /* texto */
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+
+  /* border */
+  border-color: var(--border-color);
 }
 
 html,
@@ -10,6 +26,10 @@ body,
 #root {
   width: 100%;
   height: 100%;
+}
+
+#root > div {
+  overflow-y: scroll;
 }
 
 /* util */
@@ -22,53 +42,88 @@ body,
 
 /* containers */
 .container {
-  width: calc(100% - 100px);
-  padding: 0 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 50px;
 }
 
 /* linhas e colunas */
 .row {
   width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
+
+.row > .col-auto,
 .row > .col,
+.row > .col-1,
+.row > .col-2,
+.row > .col-3,
 .row > .col-4 {
-  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px;
 }
+
+.row > .col-auto {
+  width: fit-content;
+}
+
+.row > .col,
 .row > .col-1 {
   width: 25%;
 }
+
 .row > .col-2 {
   width: 50%;
 }
+
 .row > .col-3 {
   width: 75%;
 }
 
-/* flex utils */
-.flex {
-  display: flex;
-  flex-wrap: nowrap;
+.row > .col-4 {
+  width: 100%;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+/* flex */
+.row.align-h-end {
+  justify-content: flex-end;
 }
 
-.flex-column {
-  flex-direction: column;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.align-h-center {
+.row.align-v-center {
   align-items: center;
 }
 
-.align-v-center {
-  justify-content: center;
+/* elementos */
+button {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--light-bg-color);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--light-bg-color-hover);
+}
+
+a {
+  text-decoration: none;
+}
+
+a > *:not(button) {
+  color: var(--highlight-link);
+}
+
+a *:not(button):hover {
+  text-decoration: underline;
 }
