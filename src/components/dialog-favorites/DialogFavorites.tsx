@@ -26,6 +26,15 @@ export class DialogFavorites extends React.Component<
       <tr key={fullName}>
         <td>{fullName}</td>
         <td>
+          <a
+            href={`https://github.com/${fullName}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>Ver no GitHub</button>
+          </a>
+        </td>
+        <td>
           <button
             onClick={() => {
               Favorites.remove(fullName);
@@ -51,6 +60,7 @@ export class DialogFavorites extends React.Component<
               <thead>
                 <tr>
                   <th>Owner/Repositório</th>
+                  <th>GitHub</th>
                   <th>Remover</th>
                 </tr>
               </thead>
