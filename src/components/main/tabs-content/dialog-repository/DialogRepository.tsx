@@ -1,6 +1,9 @@
 import React from "react";
 import { IRepository } from "../../../../interfaces/IRepository";
+import { Favorites } from "../../../../lib/favorites";
+import { renderClass } from "../../../../lib/util";
 import { Dialog } from "../../../dialog/Dialog";
+import "./DialogRepository.css";
 
 interface IDialogRepositoryProps {
   repository: IRepository;
@@ -14,6 +17,21 @@ export class DialogRepository extends React.Component<
   IDialogRepositoryState
 > {
   render() {
+    let favButton = (
+      <button
+        className={renderClass({
+          "fav-btn": true,
+          active: Favorites.isFavorite(this.props.repository.full_name),
+        })}
+        onClick={() => {
+          Favorites.toggle(this.props.repository.full_name);
+          this.forceUpdate();
+        }}
+      >
+        {"<3"}
+      </button>
+    );
+
     return (
       <Dialog
         title={this.props.repository.full_name}
@@ -47,6 +65,7 @@ export class DialogRepository extends React.Component<
               Último atualização:{" "}
               {new Date(this.props.repository.updated_at).toLocaleString()}
             </p>
+            {favButton}
           </div>
         </div>
       </Dialog>

@@ -6,6 +6,7 @@ import { IUser } from "./interfaces/IUser";
 import { Main } from "./components/main/Main";
 import { IRepository } from "./interfaces/IRepository";
 import { Dialog } from "./components/dialog/Dialog";
+import { DialogFavorites } from "./components/dialog-favorites/DialogFavorites";
 
 interface IAppProps {}
 
@@ -15,6 +16,7 @@ interface IAppState {
   repositories: IRepository[] | undefined;
   errorDialogVisible: boolean;
   errorMessage: string;
+  favoritesDialogVisible: boolean;
 }
 
 class App extends React.Component<IAppProps, IAppState> {
@@ -27,6 +29,7 @@ class App extends React.Component<IAppProps, IAppState> {
       repositories: [],
       errorDialogVisible: false,
       errorMessage: "",
+      favoritesDialogVisible: false,
     };
   }
 
@@ -79,6 +82,12 @@ class App extends React.Component<IAppProps, IAppState> {
   render() {
     return (
       <div className="fill-width fill-height">
+        <DialogFavorites
+          visible={this.state.favoritesDialogVisible}
+          handleCloseClick={() =>
+            this.setState({ favoritesDialogVisible: false })
+          }
+        />
         <Dialog
           title="Ocorreu um erro"
           visible={this.state.errorDialogVisible}
@@ -95,6 +104,9 @@ class App extends React.Component<IAppProps, IAppState> {
           search={this.state.search}
           searchHandleChange={this.searchHandleChange}
           searchHandleKeyPress={this.searchHandleKeyPress}
+          favoritesButtonClick={() =>
+            this.setState({ favoritesDialogVisible: true })
+          }
         />
         <Main user={this.state.user} repositories={this.state.repositories} />
       </div>

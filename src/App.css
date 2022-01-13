@@ -96,6 +96,10 @@ body,
   justify-content: flex-end;
 }
 
+.row.align-h-between {
+  justify-content: space-between;
+}
+
 .row.align-v-center {
   align-items: center;
 }

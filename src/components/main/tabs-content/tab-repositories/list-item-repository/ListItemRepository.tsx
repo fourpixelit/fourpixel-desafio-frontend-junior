@@ -1,5 +1,6 @@
 import React from "react";
 import { IRepository } from "../../../../../interfaces/IRepository";
+import { Favorites } from "../../../../../lib/favorites";
 import { DialogRepository } from "../../dialog-repository/DialogRepository";
 import "./ListItemRepository.css";
 
@@ -52,6 +53,13 @@ export class ListItemRepository extends React.Component<
               >
                 Detalhes
               </button>
+            </div>
+            <div className="col-auto">
+              <span>
+                {Favorites.isFavorite(this.props.repository.full_name)
+                  ? "<3"
+                  : "</3"}
+              </span>
             </div>
             <div className="col-auto">
               <span>{this.props.repository.language ?? "N/A"}</span>

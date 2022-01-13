@@ -2,18 +2,23 @@ import React from "react";
 import { TextField } from "../text-field/TextField";
 import "./Header.css";
 
-export class Header extends React.Component<
-  {
-    search: string;
-    searchHandleChange: React.ChangeEventHandler<HTMLInputElement>;
-    searchHandleKeyPress: React.KeyboardEventHandler<HTMLInputElement>;
-  },
-  {}
-> {
+interface IHeaderProps {
+  search: string;
+  searchHandleChange: React.ChangeEventHandler<HTMLInputElement>;
+  searchHandleKeyPress: React.KeyboardEventHandler<HTMLInputElement>;
+  favoritesButtonClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+}
+
+interface IHeaderState {}
+
+export class Header extends React.Component<IHeaderProps, IHeaderState> {
   render() {
     return (
       <header>
-        <div className="row align-h-end">
+        <div className="row align-h-between">
+          <div className="col-auto">
+            <button onClick={this.props.favoritesButtonClick}>Favoritos</button>
+          </div>
           <div className="col-1">
             <TextField
               placeholder="Username"
