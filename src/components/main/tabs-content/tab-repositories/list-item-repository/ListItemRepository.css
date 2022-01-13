@@ -6,3 +6,7 @@
 .list-item-repository .description {
   color: var(--gray);
 }
+
+span.active {
+  color: var(--highlight-active);
+}

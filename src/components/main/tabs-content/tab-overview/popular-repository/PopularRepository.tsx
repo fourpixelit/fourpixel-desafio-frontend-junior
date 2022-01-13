@@ -1,6 +1,7 @@
 import React from "react";
 import { IRepository } from "../../../../../interfaces/IRepository";
 import { Favorites } from "../../../../../lib/favorites";
+import { renderClass } from "../../../../../lib/util";
 import { DialogRepository } from "../../dialog-repository/DialogRepository";
 import "./PopularRepository.css";
 
@@ -25,6 +26,7 @@ export class PopularRepository extends React.Component<
   }
 
   render() {
+    const isFavorite = Favorites.isFavorite(this.props.repository.full_name);
     return (
       <>
         <article className="popular-repository">
@@ -55,10 +57,12 @@ export class PopularRepository extends React.Component<
               </button>
             </div>
             <div className="col-auto">
-              <span>
-                {Favorites.isFavorite(this.props.repository.full_name)
-                  ? "<3"
-                  : "</3"}
+              <span
+                className={renderClass({
+                  active: isFavorite,
+                })}
+              >
+                {isFavorite ? "<3" : "</3"}
               </span>
             </div>
             <div className="col-auto">
